@@ -2,9 +2,13 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>Айбек & Айгерим | Свадьба в Астане</title>
+    
+    <!-- ⭐⭐⭐ КРАСИВЫЕ ШРИФТЫ (как в ПРЕМИУМ) ⭐⭐⭐ -->
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&family=Lora:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         * {
             margin: 0;
@@ -14,81 +18,142 @@
         
         html {
             font-size: 16px;
+            -webkit-tap-highlight-color: transparent;
         }
         
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            color: #2c3e4f;
-            background: #fff;
+            /* ⭐⭐ ОСНОВНОЙ ШРИФТ - Cardo (как в ПРЕМИУМ) */
+            font-family: 'Cardo', 'EB Garamond', 'Georgia', serif;
+            color: #1e1e1e;
+            background: #ffffff;
             overflow-x: hidden;
             width: 100%;
             -webkit-text-size-adjust: 100%;
+            font-weight: 400;
+            line-height: 1.7;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
             width: 100%;
         }
         
-        /* Герой с красивым фоном */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.2s ease;
+        }
+        
+        /* ⭐⭐⭐ ГЕРОЙ - ЧЕРНО-БЕЛОЕ ФОТО (как в ПРЕМИУМ) ⭐⭐⭐ */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
-                        url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1600');
-            background-size: cover;
-            background-position: center;
-            background-attachment: scroll;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: white;
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+                        url('https://images.unsplash.com/photo-1606216794074-735e91aa2c92?w=1600&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center 30%;
+            background-attachment: fixed;
             position: relative;
             width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                background-attachment: scroll;
+            }
+        }
+        
+        /* Эффект зернистости (как в ПРЕМИУМ) */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjc1IiBudW1PY3RhdmVzPSIzIiAvPjwvZmlsdGVyPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbHRlcj0idXJsKCNmKSIgb3BhY2l0eT0iMC4wNCIgLz48L3N2Zz4=');
+            opacity: 0.15;
+            pointer-events: none;
+            mix-blend-mode: multiply;
         }
         
         .hero-content {
             max-width: 900px;
             padding: 20px;
-            width: 100%;
             z-index: 2;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            width: 100%;
         }
         
         .hero-pre {
-            font-size: 0.9rem;
+            /* ⭐⭐ Inter - строгий шрифт для мелкого текста */
+            font-family: 'Inter', 'Arial', sans-serif;
+            font-size: 0.7rem;
             letter-spacing: 6px;
-            margin-bottom: 20px;
-            color: rgba(255,255,255,0.9);
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.8);
             text-transform: uppercase;
+            font-weight: 400;
         }
         
         .hero-names {
-            font-size: 3.8rem;
+            /* ⭐⭐ EB Garamond Italic - элегантный курсив (как в ПРЕМИУМ) */
+            font-family: 'EB Garamond', 'Georgia', serif;
+            font-style: italic;
+            font-size: 4.2rem;
             font-weight: 400;
-            letter-spacing: 4px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: white;
             line-height: 1.2;
         }
         
         .hero-and {
-            font-size: 2.5rem;
-            color: #d4af37;
-            margin: 0 15px;
+            font-family: 'EB Garamond', 'Georgia', serif;
+            font-style: italic;
+            font-size: 2.8rem;
+            color: #e6d5b8;
+            margin: 0 10px;
+            font-weight: 400;
         }
         
         .hero-date {
-            font-size: 1.8rem;
-            font-weight: 300;
+            /* ⭐⭐ Lora Italic - красивый курсив для даты */
+            font-family: 'Lora', 'Georgia', serif;
+            font-style: italic;
+            font-size: 1.5rem;
+            font-weight: 400;
             margin-bottom: 40px;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.9);
         }
         
-        /* Таймер */
+        .hero-divider {
+            width: 60px;
+            height: 1px;
+            background: #e6d5b8;
+            margin: 35px auto;
+        }
+        
+        /* ⭐⭐⭐ ТАЙМЕР (как в ПРЕМИУМ) ⭐⭐⭐ */
         .timer-section {
-            margin-top: 30px;
+            margin-top: 40px;
+            background: rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(3px);
+            padding: 30px 20px;
+            border: 1px solid rgba(255,255,255,0.15);
+            display: inline-block;
+            width: 100%;
+            max-width: 700px;
         }
         
         .timer-grid {
@@ -104,19 +169,23 @@
         }
         
         .timer-number {
+            /* ⭐⭐ JetBrains Mono - моноширинный для цифр */
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
             font-size: 3rem;
             font-weight: 300;
             color: white;
             line-height: 1;
-            text-shadow: 0 0 20px rgba(0,0,0,0.3);
+            letter-spacing: 5px;
         }
         
         .timer-label {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.8);
+            font-family: 'Inter', 'Arial', sans-serif;
+            font-size: 0.7rem;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-top: 8px;
+            letter-spacing: 4px;
+            margin-top: 10px;
+            color: rgba(255,255,255,0.7);
+            font-weight: 400;
         }
         
         .location-badge {
@@ -124,136 +193,198 @@
             margin-top: 40px;
             padding: 12px 30px;
             background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 50px;
+            backdrop-filter: blur(3px);
+            border: 1px solid rgba(255,255,255,0.15);
             color: white;
-            font-size: 1rem;
-            border: 1px solid rgba(255,255,255,0.2);
+            font-size: 0.95rem;
+            font-family: 'Inter', 'Arial', sans-serif;
+            letter-spacing: 2px;
         }
         
-        /* Секции */
+        /* ⭐⭐⭐ СЕКЦИИ - МИНИМАЛИЗМ ⭐⭐⭐ */
         .section {
-            padding: 80px 0;
+            padding: 100px 0;
+            background: #ffffff;
         }
         
         .section-title {
+            /* ⭐⭐ Курсив для заголовков */
+            font-family: 'EB Garamond', 'Georgia', serif;
+            font-style: italic;
             font-size: 2.2rem;
-            font-weight: 300;
+            font-weight: 400;
             text-align: center;
-            margin-bottom: 20px;
-            color: #2c3e4f;
+            margin-bottom: 15px;
+            color: #1e1e1e;
+            letter-spacing: 1px;
+        }
+        
+        .section-subtitle {
+            font-family: 'Inter', 'Arial', sans-serif;
+            font-size: 0.8rem;
+            text-align: center;
+            color: #8a8a8a;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
         }
         
         .section-divider {
             width: 60px;
-            height: 2px;
-            background: #d4af37;
-            margin: 0 auto 50px;
+            height: 1px;
+            background: #b5a37e;
+            margin: 0 auto 60px;
         }
         
-        /* Место проведения */
+        /* ⭐⭐⭐ МЕСТО ПРОВЕДЕНИЯ - МИНИМАЛИЗМ ⭐⭐⭐ */
         .venue-section {
-            background: #fcf9f7;
-            padding: 80px 0;
+            background: #faf9f7;
+            padding: 100px 0;
         }
         
         .venue-card {
-            background: white;
-            padding: 50px 30px;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+            background: #ffffff;
+            padding: 50px 40px;
+            border: 1px solid #f0f0f0;
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
+            box-shadow: none;
         }
         
         .venue-name {
-            font-size: 2rem;
-            color: #2c3e4f;
-            margin-bottom: 10px;
+            /* ⭐⭐ Курсив для названия */
+            font-family: 'EB Garamond', 'Georgia', serif;
+            font-style: italic;
+            font-size: 2.2rem;
+            color: #1e1e1e;
+            margin-bottom: 15px;
+            font-weight: 400;
+            letter-spacing: 1px;
         }
         
         .venue-address {
+            font-family: 'Cardo', 'Georgia', serif;
             font-size: 1.1rem;
-            color: #5d6d7e;
+            color: #6a6a6a;
             margin-bottom: 15px;
         }
         
         .venue-time {
-            font-size: 1.2rem;
-            color: #d4af37;
+            font-family: 'Inter', 'Arial', sans-serif;
+            color: #b5a37e;
+            font-size: 0.9rem;
             font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
         
-        /* Карта */
+        /* ⭐⭐⭐ КАРТА - МИНИМАЛИЗМ ⭐⭐⭐ */
         .map-container {
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-            margin: 30px 0;
+            margin: 40px 0;
+            border: 1px solid #f0f0f0;
+            padding: 10px;
+            background: #ffffff;
         }
         
         .map-container iframe {
             width: 100%;
-            height: 400px;
+            height: 350px;
             border: 0;
-            display: block;
+            filter: grayscale(50%);
         }
         
-        /* Кнопки карт */
+        @media (max-width: 768px) {
+            .map-container iframe {
+                height: 250px;
+            }
+        }
+        
+        /* ⭐⭐⭐ КНОПКИ КАРТ - МИНИМАЛИЗМ ⭐⭐⭐ */
         .map-buttons {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             justify-content: center;
             margin: 30px 0;
             flex-wrap: wrap;
         }
         
         .map-btn {
+            font-family: 'Inter', 'Arial', sans-serif;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            padding: 12px 30px;
-            background: white;
+            gap: 8px;
+            padding: 10px 25px;
+            background: transparent;
             border: 1px solid #e0e0e0;
-            border-radius: 50px;
             text-decoration: none;
-            color: #2c3e4f;
-            transition: all 0.3s;
-            font-size: 0.95rem;
+            color: #1e1e1e;
+            transition: all 0.2s;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 1px;
         }
         
         .map-btn:hover {
-            background: #d4af37;
-            border-color: #d4af37;
+            background: #b5a37e;
+            border-color: #b5a37e;
             color: white;
         }
         
-        /* Контакты */
+        @media (max-width: 480px) {
+            .map-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .map-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 12px 20px;
+            }
+        }
+        
+        /* ⭐⭐⭐ КОНТАКТЫ - МИНИМАЛИЗМ ⭐⭐⭐ */
         .contact-box {
             text-align: center;
-            margin-top: 50px;
-            padding: 40px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            margin-top: 60px;
+            padding: 50px 40px;
+            background: #ffffff;
+            border: 1px solid #f0f0f0;
         }
         
         .contact-title {
-            font-size: 1.2rem;
-            color: #5d6d7e;
+            font-family: 'Inter', 'Arial', sans-serif;
+            font-size: 0.9rem;
+            color: #8a8a8a;
             margin-bottom: 25px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
         }
         
         .contact-phone {
+            font-family: 'Cardo', 'Georgia', serif;
             display: inline-block;
-            font-size: 1.8rem;
-            color: #d4af37;
+            font-size: 2rem;
+            color: #b5a37e;
             text-decoration: none;
-            font-weight: 300;
+            font-weight: 400;
             margin-bottom: 10px;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
         }
         
-        /* Музыка */
+        .contact-phone:hover {
+            border-bottom-color: #b5a37e;
+        }
+        
+        .contact-name {
+            font-family: 'Cardo', 'Georgia', serif;
+            color: #6a6a6a;
+            font-size: 1rem;
+            margin-top: 15px;
+            font-style: italic;
+        }
+        
+        /* ⭐⭐⭐ МУЗЫКА - МИНИМАЛИЗМ ⭐⭐⭐ */
         .music-player {
             position: fixed;
             bottom: 30px;
@@ -262,95 +393,139 @@
         }
         
         .music-btn {
-            background: white;
-            border: none;
-            padding: 15px 25px;
-            border-radius: 50px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            font-family: 'Inter', 'Arial', sans-serif;
+            background: rgba(255,255,255,0.9);
+            border: 1px solid #e0e0e0;
+            padding: 12px 25px;
             cursor: pointer;
             display: flex;
             align-items: center;
-            gap: 12px;
-            color: #d4af37;
-            font-size: 1rem;
-            transition: all 0.3s;
+            gap: 10px;
+            color: #1e1e1e;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+            font-weight: 400;
+            letter-spacing: 1px;
+            backdrop-filter: blur(5px);
+            -webkit-appearance: none;
+            appearance: none;
         }
         
         .music-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(212,175,55,0.25);
+            border-color: #b5a37e;
+            color: #b5a37e;
         }
         
-        /* Футер */
+        @media (max-width: 600px) {
+            .music-player {
+                left: 20px;
+                right: 20px;
+                bottom: 20px;
+            }
+            .music-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 15px 25px;
+            }
+        }
+        
+        /* ⭐⭐⭐ ФУТЕР - МИНИМАЛИЗМ ⭐⭐⭐ */
         footer {
-            background: #1e2b36;
-            color: white;
+            background: #ffffff;
+            color: #1e1e1e;
             text-align: center;
             padding: 60px 20px;
+            border-top: 1px solid #f0f0f0;
         }
         
         .footer-names {
+            font-family: 'EB Garamond', 'Georgia', serif;
+            font-style: italic;
             font-size: 1.8rem;
             margin-bottom: 15px;
-            font-weight: 300;
-            letter-spacing: 3px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #1e1e1e;
         }
         
-        /* Адаптивность */
+        .footer-heart {
+            color: #b5a37e;
+            margin: 0 10px;
+            font-style: normal;
+        }
+        
+        footer div {
+            font-family: 'Cardo', 'Georgia', serif;
+            color: #6a6a6a;
+            font-size: 1rem;
+        }
+        
+        /* ⭐⭐⭐ АДАПТИВНОСТЬ (как в ПРЕМИУМ) ⭐⭐⭐ */
         @media (max-width: 992px) {
             html { font-size: 15px; }
-            .hero-names { font-size: 3rem; }
+            .hero-names { font-size: 3.5rem; }
         }
         
         @media (max-width: 768px) {
             html { font-size: 14px; }
-            .hero-names { font-size: 2.5rem; }
-            .hero-and { font-size: 1.8rem; }
-            .hero-date { font-size: 1.4rem; }
+            .hero-names { font-size: 2.8rem; }
+            .hero-and { font-size: 2rem; }
+            .hero-date { font-size: 1.3rem; }
             .timer-number { font-size: 2.2rem; }
-            .timer-grid { gap: 20px; }
-            .venue-name { font-size: 1.6rem; }
-            .map-container iframe { height: 300px; }
-            .map-buttons { gap: 15px; }
-            .map-btn { padding: 10px 20px; }
-            .contact-phone { font-size: 1.4rem; }
-            .music-player { bottom: 20px; right: 20px; }
-            .music-btn { padding: 12px 20px; }
+            .timer-grid { gap: 25px; }
+            .section-title { font-size: 1.8rem; }
+            .venue-name { font-size: 1.8rem; }
+            .section { padding: 70px 0; }
+            .venue-section { padding: 70px 0; }
+            .contact-box { padding: 40px 30px; }
         }
         
         @media (max-width: 480px) {
             html { font-size: 13px; }
-            .hero-names { font-size: 2rem; }
-            .hero-and { font-size: 1.5rem; }
+            .hero-names { font-size: 2.2rem; }
+            .hero-and { font-size: 1.6rem; }
             .timer-number { font-size: 1.8rem; }
-            .timer-item { min-width: 70px; }
-            .map-buttons { flex-direction: column; }
-            .map-btn { justify-content: center; }
-            .venue-card { padding: 30px 20px; }
-            .contact-phone { font-size: 1.2rem; }
-            .music-player { left: 20px; right: 20px; bottom: 20px; }
-            .music-btn { width: 100%; justify-content: center; }
+            .timer-item { min-width: 65px; }
+            .timer-grid { gap: 15px; }
+            .section-title { font-size: 1.6rem; }
+            .venue-name { font-size: 1.6rem; }
+            .contact-phone { font-size: 1.6rem; }
+            .venue-card { padding: 40px 25px; }
+            .contact-box { padding: 40px 25px; }
+        }
+        
+        @media (max-width: 360px) {
+            html { font-size: 12px; }
+            .hero-names { font-size: 2rem; }
+            .timer-number { font-size: 1.6rem; }
+            .timer-item { min-width: 55px; }
         }
         
         h1, h2, h3, p, div, span, a {
             word-wrap: break-word;
             overflow-wrap: break-word;
         }
+        
+        iframe {
+            max-width: 100%;
+        }
     </style>
 </head>
 <body>
-    <!-- Герой -->
+    <!-- ⭐⭐⭐ ГЕРОЙ - ЧЕРНО-БЕЛОЕ ФОТО ⭐⭐⭐ -->
     <section class="hero">
-        <div class="hero-content">
+        <div class="hero-content fade-in">
             <div class="hero-pre">ПРИГЛАШЕНИЕ НА СВАДЬБУ</div>
             
             <h1 class="hero-names">
-                АЙБЕК <span class="hero-and">&</span> АЙГЕРИМ
+                Айбек <span class="hero-and">&</span> Айгерим
             </h1>
             
-            <div class="hero-date">26 ИЮНЯ 2026</div>
+            <div class="hero-date">26 июня 2026</div>
             
-            <!-- Таймер -->
+            <div class="hero-divider"></div>
+            
+            <!-- ⭐⭐⭐ ТАЙМЕР (как в ПРЕМИУМ) ⭐⭐⭐ -->
             <div class="timer-section">
                 <div class="timer-grid">
                     <div class="timer-item">
@@ -379,14 +554,15 @@
         </div>
     </section>
     
-    <!-- Место проведения -->
+    <!-- ⭐⭐⭐ МЕСТО ПРОВЕДЕНИЯ - МИНИМАЛИЗМ ⭐⭐⭐ -->
     <section class="venue-section">
         <div class="container">
-            <h2 class="section-title">МЕСТО ПРОВЕДЕНИЯ</h2>
+            <h2 class="section-title">Место проведения</h2>
+            <div class="section-subtitle">LOCATION</div>
             <div class="section-divider"></div>
             
             <div class="venue-card">
-                <div class="venue-name">РЕСТОРАН «ДӘСТҮРЛІК»</div>
+                <div class="venue-name">Ресторан «Дәстүрлік»</div>
                 <div class="venue-address">г. Астана, пр. Тауелсиздик, 15</div>
                 <div class="venue-time">НАЧАЛО В 18:00</div>
             </div>
@@ -412,37 +588,39 @@
                 </a>
             </div>
             
-            <!-- Контакты -->
+            <!-- Контакты - только телефон -->
             <div class="contact-box">
-                <div class="contact-title">📌 ПОДТВЕРДИТЕ ПРИСУТСТВИЕ</div>
+                <div class="contact-title">ПОДТВЕРДИТЕ ПРИСУТСТВИЕ</div>
                 <a href="tel:+77771234567" class="contact-phone">
                     +7 (777) 123-45-67
                 </a>
-                <div style="color: #95a5a6; margin-top: 15px;">
-                    Айгуль (организатор)
+                <div class="contact-name">
+                    Айгуль, организатор
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- Футер -->
+    <!-- ⭐⭐⭐ ФУТЕР - МИНИМАЛИЗМ ⭐⭐⭐ -->
     <footer>
-        <div class="footer-names">АЙБЕК ❤ АЙГЕРИМ</div>
-        <div style="font-size: 1.1rem; margin-bottom: 20px; color: rgba(255,255,255,0.8);">
+        <div class="footer-names">
+            Айбек <span class="footer-heart">✦</span> Айгерим
+        </div>
+        <div style="margin-bottom: 20px; color: #6a6a6a;">
             26 июня 2026 • Астана
         </div>
-        <div style="color: rgba(255,255,255,0.6);">
-            С нетерпением ждем вас!
+        <div style="color: #8a8a8a; font-style: italic;">
+            С нетерпением ждем вас
         </div>
     </footer>
     
-    <!-- Музыка -->
+    <!-- ⭐⭐⭐ МУЗЫКА ⭐⭐⭐ -->
     <div class="music-player">
         <button class="music-btn" id="musicToggle">
             <i class="fas fa-music"></i>
-            <span>Включить музыку</span>
+            <span>Музыка</span>
         </button>
-        <audio id="bgMusic" loop>
+        <audio id="bgMusic" loop preload="auto">
             <source src="https://assets.mixkit.co/music/493/493.mp3" type="audio/mpeg">
         </audio>
     </div>
@@ -479,10 +657,10 @@
         toggleBtn.addEventListener('click', function() {
             if (isPlaying) {
                 music.pause();
-                toggleBtn.innerHTML = '<i class="fas fa-music"></i><span>Включить музыку</span>';
+                toggleBtn.innerHTML = '<i class="fas fa-music"></i><span>Музыка</span>';
             } else {
                 music.play();
-                toggleBtn.innerHTML = '<i class="fas fa-pause"></i><span>Выключить музыку</span>';
+                toggleBtn.innerHTML = '<i class="fas fa-pause"></i><span>Пауза</span>';
             }
             isPlaying = !isPlaying;
         });
@@ -491,7 +669,7 @@
         window.addEventListener('load', function() {
             music.play().then(() => {
                 isPlaying = true;
-                toggleBtn.innerHTML = '<i class="fas fa-pause"></i><span>Выключить музыку</span>';
+                toggleBtn.innerHTML = '<i class="fas fa-pause"></i><span>Пауза</span>';
             }).catch(() => {});
         });
     </script>
