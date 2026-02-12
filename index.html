@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Иван & Мария | Свадебное приглашение</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            background: #fafafa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Герой секция */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)),
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1350');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 40px;
+        }
+        
+        .names {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        
+        .and {
+            font-size: 2rem;
+            color: #d4af37;
+            margin: 0 15px;
+        }
+        
+        .date {
+            font-size: 1.5rem;
+            color: #d4af37;
+            margin: 30px 0;
+            font-weight: 300;
+        }
+        
+        /* Таймер */
+        .timer-section {
+            padding: 80px 20px;
+            background: white;
+            text-align: center;
+        }
+        
+        .timer-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .timer-item {
+            text-align: center;
+        }
+        
+        .timer-number {
+            font-size: 3.5rem;
+            font-weight: 300;
+            color: #333;
+            line-height: 1;
+        }
+        
+        .timer-label {
+            font-size: 0.9rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+        }
+        
+        /* Карта */
+        .map-section {
+            padding: 80px 20px;
+            background: #f5f5f5;
+        }
+        
+        .map-container {
+            width: 100%;
+            height: 400px;
+            background: #ddd;
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e0e0e0;
+            color: #666;
+        }
+        
+        /* Форма */
+        .rsvp-section {
+            padding: 80px 20px;
+            background: white;
+        }
+        
+        .rsvp-form {
+            max-width: 600px;
+            margin: 40px auto 0;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #d4af37;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: #c4a032;
+        }
+        
+        /* Футер */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .names { font-size: 2.5rem; }
+            .timer-grid { gap: 20px; }
+            .timer-number { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Герой -->
+    <section class="hero">
+        <div class="hero-content">
+            <div style="font-size: 1rem; color: #d4af37; letter-spacing: 5px; margin-bottom: 20px;">
+                WEDDING INVITATION
+            </div>
+            <h1 class="names">
+                <span>ИВАН</span>
+                <span class="and">&</span>
+                <span>МАРИЯ</span>
+            </h1>
+            <div class="date">
+                25 ЯНВАРЯ 2025 • 18:00
+            </div>
+            <div style="margin-top: 40px;">
+                <a href="#rsvp" style="background: #d4af37; color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; letter-spacing: 2px;">
+                    ПОДТВЕРДИТЬ УЧАСТИЕ
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Таймер -->
+    <section class="timer-section">
+        <div class="container">
+            <h2 style="font-size: 2rem; font-weight: 300; margin-bottom: 20px;">ДО СВАДЬБЫ ОСТАЛОСЬ</h2>
+            <div class="timer-grid">
+                <div class="timer-item">
+                    <span class="timer-number" id="days">00</span>
+                    <span class="timer-label">ДНЕЙ</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="hours">00</span>
+                    <span class="timer-label">ЧАСОВ</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="minutes">00</span>
+                    <span class="timer-label">МИНУТ</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-number" id="seconds">00</span>
+                    <span class="timer-label">СЕКУНД</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Место проведения -->
+    <section class="map-section">
+        <div class="container">
+            <h2 style="font-size: 2rem; font-weight: 300; text-align: center; margin-bottom: 20px;">МЕСТО ПРОВЕДЕНИЯ</h2>
+            <div style="text-align: center; margin-bottom: 30px;">
+                <p style="font-size: 1.3rem; margin-bottom: 10px;">РЕСТОРАН "САЛТАНАТ"</p>
+                <p style="color: #666; margin-bottom: 5px;">г. Москва, ул. Тверская, д. 10</p>
+                <p style="color: #d4af37;">Начало в 18:00</p>
+            </div>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem; margin-bottom: 10px;">📍</div>
+                        <p>Интерактивная карта загружается...</p>
+                        <p style="margin-top: 10px; font-size: 0.9rem;">Яндекс Карты | Google Maps</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Футер -->
+    <footer>
+        <p style="font-size: 1.2rem; margin-bottom: 20px;">ИВАН & МАРИЯ</p>
+        <p style="color: #999; margin-bottom: 10px;">25 января 2025</p>
+        <p style="color: #d4af37;">С нетерпением ждем вас!</p>
+    </footer>
+    
+    <script>
+        // Таймер
+        function updateTimer() {
+            const weddingDate = new Date('2025-01-25T18:00:00').getTime();
+            const now = new Date().getTime();
+            const diff = weddingDate - now;
+            
+            document.getElementById('days').textContent = Math.floor(diff / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById('hours').textContent = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
+        }
+        
+        updateTimer();
+        setInterval(updateTimer, 1000);
+        
+ 
+    </script>
+</body>
+</html>
