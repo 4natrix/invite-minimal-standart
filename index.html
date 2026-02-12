@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Иван & Мария | Свадебное приглашение</title>
+    <title>Айбек & Айгерим | Үйлену той</title>
     <style>
         * {
             margin: 0;
@@ -13,18 +13,17 @@
         
         body {
             font-family: 'Helvetica', 'Arial', sans-serif;
-            background: #fafafa;
-            color: #333;
-            line-height: 1.6;
+            background: #fcfcfc;
+            color: #2c3e50;
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
             padding: 0 20px;
         }
         
-        /* Герой секция */
+        /* Герой */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -38,43 +37,41 @@
         }
         
         .hero-content {
-            max-width: 800px;
-            padding: 40px;
+            max-width: 900px;
+            padding: 40px 20px;
         }
         
         .names {
             font-size: 4rem;
             font-weight: 300;
-            letter-spacing: 8px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin-bottom: 30px;
+            color: #1e2b36;
         }
         
         .and {
-            font-size: 2rem;
-            color: #d4af37;
-            margin: 0 15px;
+            font-size: 2.5rem;
+            color: #b38b5f;
+            margin: 0 20px;
         }
         
         .date {
-            font-size: 1.5rem;
-            color: #d4af37;
-            margin: 30px 0;
+            font-size: 1.8rem;
+            color: #b38b5f;
+            margin-bottom: 40px;
             font-weight: 300;
+            letter-spacing: 3px;
         }
         
         /* Таймер */
         .timer-section {
-            padding: 80px 20px;
-            background: white;
-            text-align: center;
+            margin: 40px 0 60px;
         }
         
         .timer-grid {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
+            gap: 50px;
         }
         
         .timer-item {
@@ -84,178 +81,235 @@
         .timer-number {
             font-size: 3.5rem;
             font-weight: 300;
-            color: #333;
+            color: #2c3e50;
             line-height: 1;
         }
         
         .timer-label {
             font-size: 0.9rem;
-            color: #999;
+            color: #95a5a6;
             text-transform: uppercase;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
             margin-top: 10px;
         }
         
         /* Карта */
         .map-section {
-            padding: 80px 20px;
-            background: #f5f5f5;
+            padding: 80px 0;
+            background: #f8f9fa;
         }
         
-        .map-container {
-            width: 100%;
-            height: 400px;
-            background: #ddd;
+        .section-title {
+            font-size: 2rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        
+        .restaurant-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .restaurant-name {
+            font-size: 1.8rem;
+            color: #b38b5f;
+            margin-bottom: 10px;
+        }
+        
+        .restaurant-address {
+            font-size: 1.1rem;
+            color: #5d6d7e;
+            margin-bottom: 5px;
+        }
+        
+        .map-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
             margin-top: 30px;
-            border-radius: 10px;
-            overflow: hidden;
         }
         
-        .map-placeholder {
-            width: 100%;
-            height: 100%;
+        .map-btn {
             display: flex;
             align-items: center;
-            justify-content: center;
-            background: #e0e0e0;
-            color: #666;
-        }
-        
-        /* Форма */
-        .rsvp-section {
-            padding: 80px 20px;
+            gap: 10px;
+            padding: 12px 30px;
             background: white;
-        }
-        
-        .rsvp-form {
-            max-width: 600px;
-            margin: 40px auto 0;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 15px;
             border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
+            border-radius: 40px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
         }
         
-        .submit-btn {
-            width: 100%;
-            padding: 15px;
-            background: #d4af37;
+        .map-btn:hover {
+            background: #b38b5f;
             color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: background 0.3s;
+            border-color: #b38b5f;
         }
         
-        .submit-btn:hover {
-            background: #c4a032;
+        .map-btn i {
+            font-size: 1.2rem;
+        }
+        
+        /* Музыка */
+        .music-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+        
+        .music-btn {
+            background: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #b38b5f;
+            font-size: 1rem;
         }
         
         /* Футер */
         footer {
-            background: #222;
+            background: #2c3e50;
             color: white;
             text-align: center;
-            padding: 40px;
+            padding: 40px 20px;
         }
         
         @media (max-width: 768px) {
-            .names { font-size: 2.5rem; }
-            .timer-grid { gap: 20px; }
-            .timer-number { font-size: 2rem; }
+            .names { font-size: 2.8rem; }
+            .timer-grid { gap: 25px; }
+            .timer-number { font-size: 2.5rem; }
+            .map-buttons { flex-direction: column; align-items: center; }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Герой -->
+    <!-- Герой с таймером -->
     <section class="hero">
         <div class="hero-content">
-            <div style="font-size: 1rem; color: #d4af37; letter-spacing: 5px; margin-bottom: 20px;">
-                WEDDING INVITATION
+            <div style="font-size: 1rem; color: #b38b5f; letter-spacing: 5px; margin-bottom: 20px;">
+                ҮЙЛЕНУ ТОЙ
             </div>
+            
             <h1 class="names">
-                <span>ИВАН</span>
-                <span class="and">&</span>
-                <span>МАРИЯ</span>
+                АЙБЕК <span class="and">&</span> АЙГЕРИМ
             </h1>
-            <div class="date">
-                25 ЯНВАРЯ 2025 • 18:00
-            </div>
-            <div style="margin-top: 40px;">
-                <a href="#rsvp" style="background: #d4af37; color: white; padding: 15px 40px; text-decoration: none; border-radius: 5px; letter-spacing: 2px;">
-                    ПОДТВЕРДИТЬ УЧАСТИЕ
-                </a>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Таймер -->
-    <section class="timer-section">
-        <div class="container">
-            <h2 style="font-size: 2rem; font-weight: 300; margin-bottom: 20px;">ДО СВАДЬБЫ ОСТАЛОСЬ</h2>
-            <div class="timer-grid">
-                <div class="timer-item">
-                    <span class="timer-number" id="days">00</span>
-                    <span class="timer-label">ДНЕЙ</span>
-                </div>
-                <div class="timer-item">
-                    <span class="timer-number" id="hours">00</span>
-                    <span class="timer-label">ЧАСОВ</span>
-                </div>
-                <div class="timer-item">
-                    <span class="timer-number" id="minutes">00</span>
-                    <span class="timer-label">МИНУТ</span>
-                </div>
-                <div class="timer-item">
-                    <span class="timer-number" id="seconds">00</span>
-                    <span class="timer-label">СЕКУНД</span>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Место проведения -->
-    <section class="map-section">
-        <div class="container">
-            <h2 style="font-size: 2rem; font-weight: 300; text-align: center; margin-bottom: 20px;">МЕСТО ПРОВЕДЕНИЯ</h2>
-            <div style="text-align: center; margin-bottom: 30px;">
-                <p style="font-size: 1.3rem; margin-bottom: 10px;">РЕСТОРАН "САЛТАНАТ"</p>
-                <p style="color: #666; margin-bottom: 5px;">г. Москва, ул. Тверская, д. 10</p>
-                <p style="color: #d4af37;">Начало в 18:00</p>
-            </div>
-            <div class="map-container">
-                <div class="map-placeholder">
-                    <div style="text-align: center;">
-                        <div style="font-size: 3rem; margin-bottom: 10px;">📍</div>
-                        <p>Интерактивная карта загружается...</p>
-                        <p style="margin-top: 10px; font-size: 0.9rem;">Яндекс Карты | Google Maps</p>
+            
+            <div class="date">25 МАУСЫМ 2025</div>
+            
+            <!-- Таймер ПОД именами -->
+            <div class="timer-section">
+                <div class="timer-grid">
+                    <div class="timer-item">
+                        <div class="timer-number" id="days">00</div>
+                        <div class="timer-label">КҮН</div>
+                    </div>
+                    <div class="timer-item">
+                        <div class="timer-number" id="hours">00</div>
+                        <div class="timer-label">САҒАТ</div>
+                    </div>
+                    <div class="timer-item">
+                        <div class="timer-number" id="minutes">00</div>
+                        <div class="timer-label">МИНУТ</div>
+                    </div>
+                    <div class="timer-item">
+                        <div class="timer-number" id="seconds">00</div>
+                        <div class="timer-label">СЕКУНД</div>
                     </div>
                 </div>
             </div>
+            
+            <div style="margin-top: 50px; color: #5d6d7e; font-size: 1.1rem;">
+                <i class="fas fa-map-marker-alt" style="color: #b38b5f;"></i> 
+                ДӘСТҮРЛІК, Астана • 18:00
+            </div>
         </div>
     </section>
     
+    <!-- Место проведения с Яндекс.Картой -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">МЕСТО ПРОВЕДЕНИЯ</h2>
+            
+            <div class="restaurant-info">
+                <div class="restaurant-name">ДӘСТҮРЛІК</div>
+                <div class="restaurant-address">Нұр-Сұлтан, Тәуелсіздік даңғылы, 15</div>
+                <div style="color: #b38b5f; margin-top: 10px;">Салтанатты басталуы: 18:00</div>
+            </div>
+            
+            <!-- Яндекс.Карта (кликабельная) -->
+            <div style="text-align: center; margin-bottom: 30px;">
+                <iframe 
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A0a8b8c8d8e8f8a8b8c8d8e8f8a8b8c8d8e8f8a8b&source=constructor" 
+                    width="100%" 
+                    height="400" 
+                    style="border:0; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                </iframe>
+                <p style="margin-top: 10px; color: #7f8c8d; font-size: 0.9rem;">
+                    * Нажмите на карту для увеличения
+                </p>
+            </div>
+            
+            <!-- Кнопки карт -->
+            <div class="map-buttons">
+                <a href="https://yandex.kz/maps/?whatshere%5Bpoint%5D=71.430,51.160&whatshere%5Bzoom%5D=18" target="_blank" class="map-btn">
+                    <i class="fas fa-map"></i> Яндекс Карта
+                </a>
+                <a href="https://www.google.com/maps/search/?api=1&query=Тәуелсіздік+даңғылы+15+Астана" target="_blank" class="map-btn">
+                    <i class="fab fa-google"></i> Google Maps
+                </a>
+                <a href="https://2gis.kz/astana/geo/123456789" target="_blank" class="map-btn">
+                    <i class="fas fa-location-dot"></i> 2GIS
+                </a>
+            </div>
+            
+            <!-- Контакты для подтверждения (только телефон) -->
+            <div style="text-align: center; margin-top: 60px; padding: 30px; background: white; border-radius: 10px;">
+                <p style="font-size: 1.1rem; margin-bottom: 15px;">📌 Қатысуыңызды растау үшін:</p>
+                <a href="tel:+77771234567" style="display: inline-block; background: #b38b5f; color: white; padding: 15px 50px; text-decoration: none; border-radius: 5px; font-size: 1.2rem;">
+                    📞 +7 (777) 123-45-67
+                </a>
+                <p style="margin-top: 20px; color: #95a5a6;">
+                    Айгүл (ұйымдастырушы)
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Музыка -->
+    <div class="music-control">
+        <button class="music-btn" id="musicToggle">
+            <i class="fas fa-music"></i>
+            <span>🎵 Қосылу</span>
+        </button>
+        <audio id="bgMusic" loop>
+            <source src="https://assets.mixkit.co/music/preview/mixkit-wedding-day-1263.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+    
     <!-- Футер -->
     <footer>
-        <p style="font-size: 1.2rem; margin-bottom: 20px;">ИВАН & МАРИЯ</p>
-        <p style="color: #999; margin-bottom: 10px;">25 января 2025</p>
-        <p style="color: #d4af37;">С нетерпением ждем вас!</p>
+        <div style="font-size: 1.5rem; margin-bottom: 20px;">АЙБЕК & АЙГЕРИМ</div>
+        <p>25 маусым 2025 • Астана</p>
+        <p style="margin-top: 30px; color: #bdc3c7; font-size: 0.9rem;">
+            Бізбен бірге қуаныңыз!
+        </p>
     </footer>
     
     <script>
         // Таймер
         function updateTimer() {
-            const weddingDate = new Date('2025-01-25T18:00:00').getTime();
+            const weddingDate = new Date('2025-06-25T18:00:00').getTime();
             const now = new Date().getTime();
             const diff = weddingDate - now;
             
@@ -264,11 +318,24 @@
             document.getElementById('minutes').textContent = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
             document.getElementById('seconds').textContent = Math.floor((diff % (1000 * 60)) / 1000).toString().padStart(2, '0');
         }
-        
         updateTimer();
         setInterval(updateTimer, 1000);
         
- 
+        // Музыка
+        let musicPlaying = false;
+        const music = document.getElementById('bgMusic');
+        const toggle = document.getElementById('musicToggle');
+        
+        toggle.addEventListener('click', () => {
+            if (musicPlaying) {
+                music.pause();
+                toggle.innerHTML = '<i class="fas fa-music"></i><span>🎵 Қосылу</span>';
+            } else {
+                music.play();
+                toggle.innerHTML = '<i class="fas fa-pause"></i><span>⏸ Тоқтату</span>';
+            }
+            musicPlaying = !musicPlaying;
+        });
     </script>
 </body>
 </html>
