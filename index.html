@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Айбек & Айгерим | Свадьба в Астане</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -12,122 +12,128 @@
             box-sizing: border-box;
         }
         
+        html {
+            font-size: 16px;
+        }
+        
         body {
-            font-family: 'Helvetica Neue', 'Arial', sans-serif;
-            background: #fffdfc;
+            font-family: 'Georgia', 'Times New Roman', serif;
             color: #2c3e4f;
+            background: #fff;
+            overflow-x: hidden;
+            width: 100%;
+            -webkit-text-size-adjust: 100%;
         }
         
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
         
-        /* Герой секция */
+        /* Герой с красивым фоном */
         .hero {
             min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+                        url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1600');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
-                        url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=1350');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            color: white;
+            position: relative;
+            width: 100%;
         }
         
         .hero-content {
             max-width: 900px;
-            padding: 40px 20px;
+            padding: 20px;
+            width: 100%;
+            z-index: 2;
         }
         
-        .wedding-tag {
+        .hero-pre {
             font-size: 0.9rem;
             letter-spacing: 6px;
-            color: #b38b5f;
             margin-bottom: 20px;
+            color: rgba(255,255,255,0.9);
             text-transform: uppercase;
         }
         
-        .names {
-            font-size: 4rem;
-            font-weight: 300;
+        .hero-names {
+            font-size: 3.8rem;
+            font-weight: 400;
             letter-spacing: 4px;
-            margin-bottom: 30px;
-            color: #1e2b36;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 20px rgba(0,0,0,0.3);
+            line-height: 1.2;
         }
         
-        .and {
+        .hero-and {
             font-size: 2.5rem;
-            color: #b38b5f;
+            color: #d4af37;
             margin: 0 15px;
         }
         
-        .wedding-date {
+        .hero-date {
             font-size: 1.8rem;
-            color: #b38b5f;
             font-weight: 300;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
             letter-spacing: 3px;
         }
         
         /* Таймер */
-        .timer-wrapper {
-            margin: 40px 0 30px;
-        }
-        
-        .timer-title {
-            font-size: 1.1rem;
-            color: #5d6d7e;
-            margin-bottom: 25px;
-            letter-spacing: 3px;
+        .timer-section {
+            margin-top: 30px;
         }
         
         .timer-grid {
             display: flex;
             justify-content: center;
-            gap: 50px;
+            gap: 40px;
+            flex-wrap: wrap;
         }
         
         .timer-item {
             text-align: center;
+            min-width: 80px;
         }
         
         .timer-number {
-            font-size: 3.5rem;
+            font-size: 3rem;
             font-weight: 300;
-            color: #2c3e4f;
+            color: white;
             line-height: 1;
+            text-shadow: 0 0 20px rgba(0,0,0,0.3);
         }
         
         .timer-label {
             font-size: 0.8rem;
-            color: #95a5a6;
+            color: rgba(255,255,255,0.8);
             text-transform: uppercase;
             letter-spacing: 3px;
-            margin-top: 10px;
+            margin-top: 8px;
         }
         
         .location-badge {
             display: inline-block;
             margin-top: 40px;
             padding: 12px 30px;
-            background: rgba(179, 139, 95, 0.1);
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
             border-radius: 50px;
-            color: #b38b5f;
+            color: white;
             font-size: 1rem;
+            border: 1px solid rgba(255,255,255,0.2);
         }
         
-        .location-badge i {
-            margin-right: 8px;
-        }
-        
-        /* Секция места */
-        .venue-section {
-            padding: 100px 0;
-            background: #fcf9f7;
+        /* Секции */
+        .section {
+            padding: 80px 0;
         }
         
         .section-title {
@@ -141,15 +147,21 @@
         .section-divider {
             width: 60px;
             height: 2px;
-            background: #b38b5f;
+            background: #d4af37;
             margin: 0 auto 50px;
+        }
+        
+        /* Место проведения */
+        .venue-section {
+            background: #fcf9f7;
+            padding: 80px 0;
         }
         
         .venue-card {
             background: white;
-            padding: 50px;
+            padding: 50px 30px;
             border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.02);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.03);
             text-align: center;
             margin-bottom: 40px;
         }
@@ -168,22 +180,23 @@
         
         .venue-time {
             font-size: 1.2rem;
-            color: #b38b5f;
+            color: #d4af37;
             font-weight: 500;
         }
         
-        /* Яндекс Карта */
+        /* Карта */
         .map-container {
-            margin: 40px 0;
-            border-radius: 15px;
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            margin: 30px 0;
         }
         
-        .yandex-map {
+        .map-container iframe {
             width: 100%;
             height: 400px;
             border: 0;
+            display: block;
         }
         
         /* Кнопки карт */
@@ -202,7 +215,7 @@
             padding: 12px 30px;
             background: white;
             border: 1px solid #e0e0e0;
-            border-radius: 40px;
+            border-radius: 50px;
             text-decoration: none;
             color: #2c3e4f;
             transition: all 0.3s;
@@ -210,22 +223,18 @@
         }
         
         .map-btn:hover {
-            background: #b38b5f;
-            border-color: #b38b5f;
+            background: #d4af37;
+            border-color: #d4af37;
             color: white;
-        }
-        
-        .map-btn i {
-            font-size: 1.1rem;
         }
         
         /* Контакты */
         .contact-box {
             text-align: center;
-            margin-top: 60px;
+            margin-top: 50px;
             padding: 40px;
             background: white;
-            border-radius: 15px;
+            border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
         
@@ -238,15 +247,10 @@
         .contact-phone {
             display: inline-block;
             font-size: 1.8rem;
-            color: #b38b5f;
+            color: #d4af37;
             text-decoration: none;
             font-weight: 300;
             margin-bottom: 10px;
-        }
-        
-        .contact-name {
-            color: #95a5a6;
-            font-size: 0.95rem;
         }
         
         /* Музыка */
@@ -262,77 +266,92 @@
             border: none;
             padding: 15px 25px;
             border-radius: 50px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 12px;
-            color: #b38b5f;
+            color: #d4af37;
             font-size: 1rem;
             transition: all 0.3s;
         }
         
         .music-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(179,139,95,0.2);
+            box-shadow: 0 8px 25px rgba(212,175,55,0.25);
         }
         
         /* Футер */
         footer {
-            background: #2c3e4f;
+            background: #1e2b36;
             color: white;
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
         }
         
         .footer-names {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             margin-bottom: 15px;
             font-weight: 300;
-        }
-        
-        .footer-date {
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 10px;
+            letter-spacing: 3px;
         }
         
         /* Адаптивность */
+        @media (max-width: 992px) {
+            html { font-size: 15px; }
+            .hero-names { font-size: 3rem; }
+        }
+        
         @media (max-width: 768px) {
-            .names { font-size: 2.8rem; }
-            .timer-grid { gap: 25px; }
-            .timer-number { font-size: 2.5rem; }
-            .venue-card { padding: 30px; }
-            .yandex-map { height: 300px; }
+            html { font-size: 14px; }
+            .hero-names { font-size: 2.5rem; }
+            .hero-and { font-size: 1.8rem; }
+            .hero-date { font-size: 1.4rem; }
+            .timer-number { font-size: 2.2rem; }
+            .timer-grid { gap: 20px; }
+            .venue-name { font-size: 1.6rem; }
+            .map-container iframe { height: 300px; }
+            .map-buttons { gap: 15px; }
+            .map-btn { padding: 10px 20px; }
             .contact-phone { font-size: 1.4rem; }
+            .music-player { bottom: 20px; right: 20px; }
+            .music-btn { padding: 12px 20px; }
         }
         
         @media (max-width: 480px) {
-            .names { font-size: 2rem; }
-            .and { font-size: 1.8rem; }
-            .timer-grid { gap: 15px; }
+            html { font-size: 13px; }
+            .hero-names { font-size: 2rem; }
+            .hero-and { font-size: 1.5rem; }
             .timer-number { font-size: 1.8rem; }
+            .timer-item { min-width: 70px; }
             .map-buttons { flex-direction: column; }
             .map-btn { justify-content: center; }
-            .music-player { bottom: 20px; right: 20px; }
-            .music-btn { padding: 12px 20px; }
+            .venue-card { padding: 30px 20px; }
+            .contact-phone { font-size: 1.2rem; }
+            .music-player { left: 20px; right: 20px; bottom: 20px; }
+            .music-btn { width: 100%; justify-content: center; }
+        }
+        
+        h1, h2, h3, p, div, span, a {
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
     </style>
 </head>
 <body>
-    <!-- Герой секция с таймером -->
+    <!-- Герой -->
     <section class="hero">
         <div class="hero-content">
-            <div class="wedding-tag">ПРИГЛАШЕНИЕ НА СВАДЬБУ</div>
+            <div class="hero-pre">ПРИГЛАШЕНИЕ НА СВАДЬБУ</div>
             
-            <h1 class="names">
-                АЙБЕК <span class="and">&</span> АЙГЕРИМ
+            <h1 class="hero-names">
+                АЙБЕК <span class="hero-and">&</span> АЙГЕРИМ
             </h1>
             
-            <div class="wedding-date">26 ИЮНЯ 2026</div>
+            <div class="hero-date">26 ИЮНЯ 2026</div>
             
-            <!-- Таймер под именами -->
-            <div class="timer-wrapper">
-                <div class="timer-title">ДО ТОРЖЕСТВА ОСТАЛОСЬ</div>
+            <!-- Таймер -->
+            <div class="timer-section">
                 <div class="timer-grid">
                     <div class="timer-item">
                         <div class="timer-number" id="days">00</div>
@@ -354,12 +373,13 @@
             </div>
             
             <div class="location-badge">
-                <i class="fas fa-map-marker-alt"></i> Астана, ресторан «Дәстүрлік» • 18:00
+                <i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i>
+                Астана, ресторан «Дәстүрлік» • 18:00
             </div>
         </div>
     </section>
     
-    <!-- Место проведения и карта -->
+    <!-- Место проведения -->
     <section class="venue-section">
         <div class="container">
             <h2 class="section-title">МЕСТО ПРОВЕДЕНИЯ</h2>
@@ -367,20 +387,19 @@
             
             <div class="venue-card">
                 <div class="venue-name">РЕСТОРАН «ДӘСТҮРЛІК»</div>
-                <div class="venue-address">г. Астана, проспект Тауелсиздик, 15</div>
+                <div class="venue-address">г. Астана, пр. Тауелсиздик, 15</div>
                 <div class="venue-time">НАЧАЛО В 18:00</div>
             </div>
             
-            <!-- Яндекс Карта (интерактивная) -->
+            <!-- Яндекс Карта -->
             <div class="map-container">
                 <iframe 
-                    class="yandex-map"
                     src="https://yandex.ru/map-widget/v1/?um=constructor%3A8b8c8d8e8f8a8b8c8d8e8f8a8b8c8d8e8f8a8b&source=constructor"
-                    allowfullscreen>
+                    loading="lazy">
                 </iframe>
             </div>
             
-            <!-- Кнопки карт (Яндекс, Google, 2GIS) -->
+            <!-- Кнопки карт -->
             <div class="map-buttons">
                 <a href="https://yandex.kz/maps/163/astana/?ll=71.430%2C51.160&z=17" target="_blank" class="map-btn">
                     <i class="fas fa-map"></i> Яндекс Карты
@@ -388,22 +407,19 @@
                 <a href="https://www.google.com/maps/search/?api=1&query=Тауелсиздик+15+Астана" target="_blank" class="map-btn">
                     <i class="fab fa-google"></i> Google Maps
                 </a>
-                <a href="https://2gis.kz/astana/firm/123456789" target="_blank" class="map-btn">
+                <a href="https://2gis.kz/astana/geo/123456789" target="_blank" class="map-btn">
                     <i class="fas fa-location-dot"></i> 2GIS
                 </a>
             </div>
             
-            <!-- Контакты для подтверждения (только телефон) -->
+            <!-- Контакты -->
             <div class="contact-box">
                 <div class="contact-title">📌 ПОДТВЕРДИТЕ ПРИСУТСТВИЕ</div>
                 <a href="tel:+77771234567" class="contact-phone">
                     +7 (777) 123-45-67
                 </a>
-                <div class="contact-name">
+                <div style="color: #95a5a6; margin-top: 15px;">
                     Айгуль (организатор)
-                </div>
-                <div style="margin-top: 20px; color: #95a5a6; font-size: 0.9rem;">
-                    Пожалуйста, позвоните до 15 июня
                 </div>
             </div>
         </div>
@@ -411,26 +427,28 @@
     
     <!-- Футер -->
     <footer>
-        <div class="footer-names">АЙБЕК & АЙГЕРИМ</div>
-        <div class="footer-date">26 июня 2026 • Астана</div>
-        <div style="margin-top: 30px; color: rgba(255,255,255,0.5); font-size: 0.85rem;">
+        <div class="footer-names">АЙБЕК ❤ АЙГЕРИМ</div>
+        <div style="font-size: 1.1rem; margin-bottom: 20px; color: rgba(255,255,255,0.8);">
+            26 июня 2026 • Астана
+        </div>
+        <div style="color: rgba(255,255,255,0.6);">
             С нетерпением ждем вас!
         </div>
     </footer>
     
-    <!-- Музыкальный плеер -->
+    <!-- Музыка -->
     <div class="music-player">
         <button class="music-btn" id="musicToggle">
             <i class="fas fa-music"></i>
             <span>Включить музыку</span>
         </button>
-        <audio id="bgMusic" loop preload="auto">
-            <source src="https://assets.mixkit.co/music/493/493.mp3" type="audio/mpeg">
+        <audio id="bgMusic" loop>
+            <source src="https://assets.mixkit.co/music/preview/mixkit-wedding-day-1263.mp3" type="audio/mpeg">
         </audio>
     </div>
     
     <script>
-        // Таймер обратного отсчета
+        // Таймер
         function updateTimer() {
             const weddingDate = new Date('2026-06-26T18:00:00').getTime();
             const now = new Date().getTime();
@@ -444,15 +462,10 @@
                 return;
             }
             
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            document.getElementById('days').textContent = days.toString().padStart(2, '0');
-            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            document.getElementById('days').textContent = Math.floor(distance / (1000 * 60 * 60 * 24)).toString().padStart(2, '0');
+            document.getElementById('hours').textContent = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)).toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)).toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = Math.floor((distance % (1000 * 60)) / 1000).toString().padStart(2, '0');
         }
         
         updateTimer();
@@ -468,23 +481,18 @@
                 music.pause();
                 toggleBtn.innerHTML = '<i class="fas fa-music"></i><span>Включить музыку</span>';
             } else {
-                music.play().catch(e => {
-                    console.log('Автовоспроизведение заблокировано');
-                    toggleBtn.innerHTML = '<i class="fas fa-play"></i><span>Нажмите для воспроизведения</span>';
-                });
+                music.play();
                 toggleBtn.innerHTML = '<i class="fas fa-pause"></i><span>Выключить музыку</span>';
             }
             isPlaying = !isPlaying;
         });
         
-        // Попытка автостарта (с обработкой ошибки)
+        // Автостарт
         window.addEventListener('load', function() {
             music.play().then(() => {
                 isPlaying = true;
                 toggleBtn.innerHTML = '<i class="fas fa-pause"></i><span>Выключить музыку</span>';
-            }).catch(() => {
-                console.log('Автостарт не сработал - нужно нажатие');
-            });
+            }).catch(() => {});
         });
     </script>
 </body>
